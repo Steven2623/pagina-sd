@@ -23,7 +23,6 @@ header {
     color: #0a0808;
 }
 
-
 .logo-container {
     display: flex;
     justify-content: center;
@@ -72,6 +71,17 @@ header {
     border-radius: 5px;
 }
 
+.menu-toggle {
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+}
+
+/* Estilos específicos para móviles */
 @media (max-width: 768px) {
     .navbar ul {
         flex-direction: column;
@@ -100,21 +110,9 @@ header {
     }
 
     .menu-toggle {
-        order: -1;
-        cursor: pointer;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        font-size: 24px;
-        padding: 10px;
     }
 }
-
-
-
-
-
 
 /* Estilos del Contenido Principal */
 .profile-header {
@@ -187,6 +185,7 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* Posicionamiento fijo de los botones del carrusel */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -197,42 +196,31 @@ button:hover {
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
+    transition: background-color 0.3s, transform 0.3s;
     user-select: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    border-radius: 50%; /* Botones redondeados */
+    z-index: 10; /* Asegurarse de que los botones estén por encima del contenido */
 }
 
 .next {
-    right: 10px;
+    right: 10px; /* Ajusta según tu diseño */
 }
 
 .prev {
-    left: 10px;
+    left: 10px; /* Ajusta según tu diseño */
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el ratón */
 }
 
-.portfolio-button, .social-button {
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px 0;
-    border-radius: 10px;
-    cursor: pointer;
-    animation: gradientShift 3s ease infinite;
-}
-
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .prev, .next {
+        top: 50%; /* Mantén el 50% para centrar verticalmente */
+        padding: 12px; /* Ajusta el tamaño de los botones */
     }
 }
 
@@ -337,28 +325,25 @@ footer {
 .fin p {
     margin: 0;
 }
-      
-  
-  h3{
-   
-        font-size: 2em;
-        font-weight: bold;
-        color: #ff0;
-        animation: sparkle 1s infinite alternate;
-      }
-      
-      @keyframes sparkle {
-        0% {
-          text-shadow: 0 0 5px #fff, 0 0 10px #050505, 0 0 20px rgb(209, 54, 15), 0 0 30px rgb(219, 58, 18), 0 0 40px rgb(216, 56, 7), 0 0 50px rgb(207, 49, 9), 0 0 60px rgb(221, 78, 12);
-        }
-        100% {
-          text-shadow: 0 0 5px #000000, 0 0 10px #fff, 0 0 20px rgb(39, 29, 175), 0 0 30px rgb(37, 7, 172), 0 0 40px rgb(68, 14, 196), 0 0 50px rgb(38, 15, 168), 0 0 60px rgb(58, 6, 202);
-        }
-      }
-  
-      @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 
- @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+h3 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff0;
+    animation: sparkle 1s infinite alternate;
+}
+
+@keyframes sparkle {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #050505, 0 0 20px rgb(209, 54, 15), 0 0 30px rgb(219, 58, 18), 0 0 40px rgb(216, 56, 7), 0 0 50px rgb(207, 49, 9), 0 0 60px rgb(221, 78, 12);
+    }
+    100% {
+        text-shadow: 0 0 5px #000000, 0 0 10px #fff, 0 0 20px rgb(39, 29, 175), 0 0 30px rgb(37, 7, 172), 0 0 40px rgb(68, 14, 196), 0 0 50px rgb(38, 15, 168), 0 0 60px rgb(58, 6, 202);
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 p {
     font-family: 'Roboto', sans-serif;
@@ -368,7 +353,6 @@ p {
     margin: 20px 0;
     padding: 0 20px;
 }
-    
 
 .personal-contacts ul {
     list-style: none;
@@ -390,7 +374,7 @@ p {
     color: #0083b0;
 }
 
- .borde{
+.borde {
     font-size: 18px;
     color: #333;
     padding: 15px;
@@ -398,7 +382,4 @@ p {
     border-radius: 15px;
     line-height: 1.6;
     margin: 20px 0;
- }
-      
-      
-
+}
